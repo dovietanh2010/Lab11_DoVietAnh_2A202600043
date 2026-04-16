@@ -29,12 +29,10 @@ async def part1_attacks():
     agent, runner = create_unsafe_agent()
     await test_agent(agent, runner)
 
-    # TODO 1: Run manual adversarial prompts
-    print("\n--- Running manual attacks (TODO 1) ---")
+    print("\n--- Running manual attacks ---")
     results = await run_attacks(agent, runner)
 
-    # TODO 2: Generate AI attack test cases
-    print("\n--- Generating AI attacks (TODO 2) ---")
+    print("\n--- Generating AI attacks ---")
     ai_attacks = await generate_ai_attacks()
 
     return results
@@ -62,7 +60,7 @@ async def part2_guardrails():
     # Part 2B: Output guardrails
     print("\n--- Part 2B: Output Guardrails ---")
     from guardrails.output_guardrails import test_content_filter, _init_judge
-    _init_judge()  # Initialize LLM judge if TODO 7 is done
+    _init_judge()  # Initialize LLM judge (if enabled)
     test_content_filter()
 
     # Part 2C: NeMo Guardrails
@@ -86,23 +84,21 @@ async def part3_testing():
     from testing.testing import run_comparison, print_comparison, SecurityTestPipeline
     from agents.agent import create_unsafe_agent
 
-    # TODO 10: Before vs after comparison
-    print("\n--- TODO 10: Before/After Comparison ---")
+    print("\n--- Before/After Comparison ---")
     unprotected, protected = await run_comparison()
     if unprotected and protected:
         print_comparison(unprotected, protected)
     else:
-        print("Complete TODO 10 to see the comparison.")
+        print("Comparison not available.")
 
-    # TODO 11: Automated security pipeline
-    print("\n--- TODO 11: Security Test Pipeline ---")
+    print("\n--- Security Test Pipeline ---")
     agent, runner = create_unsafe_agent()
     pipeline = SecurityTestPipeline(agent, runner)
     results = await pipeline.run_all()
     if results:
         pipeline.print_report(results)
     else:
-        print("Complete TODO 11 to see the pipeline report.")
+        print("No results.")
 
 
 def part4_hitl():
@@ -113,12 +109,10 @@ def part4_hitl():
 
     from hitl.hitl import test_confidence_router, test_hitl_points
 
-    # TODO 12: Confidence Router
-    print("\n--- TODO 12: Confidence Router ---")
+    print("\n--- Confidence Router ---")
     test_confidence_router()
 
-    # TODO 13: HITL Decision Points
-    print("\n--- TODO 13: HITL Decision Points ---")
+    print("\n--- HITL Decision Points ---")
     test_hitl_points()
 
 
