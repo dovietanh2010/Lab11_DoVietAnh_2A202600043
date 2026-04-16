@@ -6,7 +6,7 @@
 
 ## 1. Tổng quan bài làm
 
-Trong assignment này, em xây dựng một **pipeline “defense-in-depth” (phòng thủ nhiều lớp)** cho trợ lý ngân hàng (banking assistant) bằng **pure Python**. Mục tiêu là đảm bảo hệ thống an toàn ngay cả khi một lớp kiểm soát bị bỏ sót, đồng thời có **audit log** và **monitoring/alerting** để quan sát hành vi.
+Trong assignment này, em xây dựng một **pipeline “defense-in-depth” (phòng thủ nhiều lớp)** cho trợ lý ngân hàng (banking assistant) bằng **Python**. Mục tiêu là đảm bảo hệ thống an toàn ngay cả khi một lớp kiểm soát bị bỏ sót, đồng thời có **audit log** và **monitoring/alerting** để quan sát hành vi.
 
 Pipeline được cài đặt trong `assignment-day-11/pipeline.py` với các lớp/chức năng chính:
 
